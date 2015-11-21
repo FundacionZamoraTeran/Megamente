@@ -1,0 +1,8 @@
+t*.pyc
+*.swo
+*.swp
+__pycache__
+.coverage
+.DS_Store
+dist/
+data/savegame.json
