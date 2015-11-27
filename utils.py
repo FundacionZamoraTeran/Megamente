@@ -31,6 +31,33 @@ class ImageSprite(pygame.sprite.Sprite):
     def move(self, display, background, position):
         #TODO: clean dirty rects
         self.rect.left, self.rect.top = position
+        self.paint(display)
+
+    def paint(self, display):
+        display.blit(self.image, self.rect)
+
+class SurfaceSprite(pygame.sprite.Sprite):
+    '''Clase para hacer un sprite a partir de una superficie'''
+
+    def __init__(self, color, size, location=(0, 0), alpha=None, name=None):
+        '''
+            color: el color que seleccionamos
+            locacion: tupla con coordenadas para definir locacion inicial de la imagen
+            nombre: nombre de la superficie
+            escalar: tupla para cambiar el tamano de imagen
+        '''
+        pygame.sprite.Sprite.__init__(self)
+
+        self.image = pygame.Surface(size)
+        self.image.fill(color)
+        if alpha:
+            self.image.set_alpha(alpha)
+
+        self.name = name
+        self.rect = self.image.get_rect()
+        self.rect.left, self.rect.top = location
+
+    def paint(self, display):
         display.blit(self.image, self.rect)
 
 

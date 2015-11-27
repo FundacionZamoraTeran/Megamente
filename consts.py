@@ -1,7 +1,14 @@
-get_sprite_path = lambda x, y: 'assets/img/sprites/%s/%s' % (x, y)
+get_sprite_path = lambda x, y: 'assets/img/%s/%s' % (x, y)
 
 
 FONT_PATH = 'assets/fonts/PatuaOne-Regular.ttf'
+
+DEDUCCION_ASSETS = {
+    'background': get_sprite_path('deduccion', 'background.png'),
+    'arrow': get_sprite_path('deduccion', 'arrow.png'),
+    'horizontal_panel': get_sprite_path('deduccion', 'horizontal-panel.png'),
+    'vertical_panel': get_sprite_path('deduccion', 'vertical-panel.png'),
+}
 
 #messages
 WIN_MESSAGE = "Felicidades, pasas al siguiente nivel!"

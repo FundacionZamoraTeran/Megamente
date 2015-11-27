@@ -1,4 +1,4 @@
-t*.pyc
+*.pyc
 *.swo
 *.swp
 __pycache__
