@@ -1,3 +1,3 @@
 # Megamente 
 
-Escribir algo acá cuando esté mas completo
+Juego de pensamiento analítico
