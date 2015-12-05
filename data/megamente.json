@@ -1,10 +1,145 @@
 [
- {
-  'pistas': ['lalallal lalala lalalal', 'lalkjalsdkfjal lkjasdfo oinodf oinoin ', 'ajoi noinwe sdfoij lkj '], 
-  'respuesta': ['1' '2', '3', '4', '5', '6']
- },
- {
-  'pistas': ['lalalsdf  lalala lalalal', 'qwert lkjasdfo oinodf oinoin ', 'ajoi noinwe sdfoij lkj '], 
-  'respuesta': ['1' '2', '3', '4', '5', '6']
- }
+  {
+  "pistas": ["Irene es mayor que Ana y menor que Alonso.", "Beatriz es mayor que Alonso.", "Juan es mayor que Beatriz."],
+  "pregunta": "¿Qué personaje es mayor?",
+  "objeto": "",
+  "respuesta": ["Juan", "Beatriz", "Alonso", "Irene", "Ana"]
+  },
+  {
+  "pistas": ["El avión amarillo vuela más que el avión azul y menos que el avión naranja.", "El avión rojo vuela más que el avión verde.", "El avión naranja vuela menos que el avión verde."],
+  "objeto": "avion",
+  "pregunta": "¿Qué avión vuela más alto?",
+  "respuesta": ["rojo", "verde", "naranja", "amarillo", "azul"]
+  },
+  {
+  "pistas": ["La pera es más jugosa que la manzana.", "La sandía es menos jugosa que la manzana.", "La fresa es más jugosa que la naranja y menos que la sandía."],
+  "pregunta": "¿Qué fruta es menos jugosa?",
+  "objeto": "",
+  "respuesta": ["naranja", "fresa", "sandía", "manzana", "pera"]
+  },
+  {
+  "pistas": ["La camisa amarilla es más cómoda que la camisa gris y menos que la camisa naranja.", "La camisa rosa es más cómoda que la camisa naranja.", "La camisa verde es más cómoda que la camisa rosa."],
+  "objeto": "camisa",
+  "pregunta": "¿Qué camisa es más cómoda?",
+  "respuesta": ["verde", "rosa", "naranja", "amarilla", "gris"]
+  },
+  {
+  "pistas": ["La piña es menos jugosa que la guayaba y más que la ciruela.", "La uva es más jugosa que la guayaba y menos que la pitaya."],
+  "objeto": "",
+  "pregunta": "¿Qué fruta es menos jugosa?",
+  "respuesta": ["ciruela", "piña", "guayaba", "uva", "pitaya"]
+  },
+  {
+  "pistas": ["La bebida verde es menos dulce que la bebida lila y más que la bebida roja.", "La bebida amarilla es menos dulce que la bebida azul.", "La bebida roja es más dulce que la bebida azul."],
+  "pregunta": "¿Qué bebida es más dulce?",
+  "objeto": "bebida",
+  "respuesta": ["lila", "verde", "roja", "azul", "amarilla"]
+  },
+  {
+  "pistas": ["La chaqueta rosa es menos cómoda que la chaqueta naranja.", "La chaqueta verde es menos cómoda que la chaqueta gris y más que la chaqueta azul.", "La chaqueta azul es más cómoda que la chaqueta naranja."],
+  "objeto": "chaqueta",
+  "pregunta": "¿Qué chaqueta es menos cómoda?",
+  "respuesta": ["rosa", "naranja", "azul", "verde", "gris"]
+  },
+  {
+  "pistas": ["El automóvil rosa es más rápido que el automóvil naranja.", "El automóvil azul es más rápido que el automóvil rosa.", "El automóvil amarillo es más rápido que el automóvil blanco y menos que el automóvil naranja."],
+  "pregunta": "¿Qué automóvil es más rápido?",
+  "respuesta": ["azul", "rosa", "naranja", "amarillo", "blanco"]
+  },
+  {
+  "pistas": ["El zapato verde es menos cómodo que el zapato gris.", "El zapato azul es más cómodo que el zapato naranja y menos que el zapato amarillo.", "El zapato gris es menos cómodo que el zapato naranja."],
+  "pregunta": "¿Qué zapato es más cómodo?",
+  "respuesta": ["amarillo", "azul", "naranja", "gris", "verde"]
+  },
+  {
+  "pistas": ["Marlon es menor que Alfredo y mayor que Rosa.", "Blanca es menor que Daniel y mayor que Alfredo."],
+  "pregunta": "¿Qué personaja es menor?",
+  "respuesta": ["Rosa", "Marlon", "Alfredo", "Blanca", "Daniel"]
+  },
+  {
+  "pistas": ["El globo rosa vuela menos que el globo blanco y más que el globo amarillo.", "El globo rojo vuela menos que el globo amarillo y más que el globo azul."],
+  "pregunta": "¿Qué globo vuela menos?",
+  "respuesta": ["azul", "rojo", "amarillo", "rosa", "blanco"]
+  },
+  {
+  "pistas": ["La silla azul es más cómoda que la silla gris y menos que la silla rosa.", "La silla verde es menos cómoda que la silla gris y más que la silla amarilla."],
+  "pregunta": "¿Qué silla es más cómoda?",
+  "respuesta": ["rosa", "azul", "gris", "verde", "amarilla"]
+  },
+  {
+  "pistas": ["El calcetín gris es menos cómodo que el calcetín azul.", "El calcetín azul es menos cómodo que el calcetín rosa.", "El calcetín amarillo es menos cómodo que el calcetín verde y más que el calcetín rosa."],
+  "pregunta": "¿Qué calcetín es más cómodo?",
+  "respuesta": ["verde", "amarillo", "rosa", "azul", "gris"]
+  },
+  {
+  "pistas": ["La cereza es más jugosa que el mango.", "El mango es más jugoso que el coco.", "La papaya es más jugosa que la cereza y menos que el melón."],
+  "pregunta": "¿Qué fruta es más jugosa?",
+  "respuesta": ["coco", "mango", "cereza", "papaya", "melón"]
+  },
+  {
+  "pistas": ["Frannia es mayor que Anielka y menor que Juan.", "Luz es menor que Marieth.", "Marieth es menor que Anielka."],
+  "objeto": "nino",
+  "pregunta": "¿Qué personaje es mayor?",
+  "respuesta": ["Juan", "Frannia", "Anielka", "Marieth", "Luz"]
+  },
+  {
+  "pistas": ["Félix es menor que Reyna y mayor que Gabriel.", "Antonio es mayor que Alisson y menor que Gabriel."],
+  "objeto": "nino",
+  "pregunta": "¿Qué personaje es mayor?",
+  "respuesta": ["Reyna", "Felix", "Gabriel", "Antonio", "Alisson"]
+  },
+  {
+  "pistas": ["El helado verde es menos dulce que el helado azul y más que el helado rojo.", "El helado amarillo es más dulce que el helado azul.", "El helado lila es más dulce que el helado amarillo."],
+  "pregunta": "¿Qué helado es más dulce?",
+  "objeto": "helado",
+  "respuesta": ["rojo", "verde", "azul", "amarillo", "lila"]
+  },
+  {
+  "pistas": ["El pájaro azul vuela menos que el pájaro rosa y más que el pájaro rojo.", "El pájaro amarillo vuela más que el pájaro rosa y menos que el pájaro verde."],
+  "pregunta": "¿Qué pájaro vuela menos?",
+  "objeto": "pajaro",
+  "respuesta": ["rojo", "azul", "rosa", "amarillo", "verde"]
+  },
+  {
+  "pistas": ["El chocolate amarillo es más dulce que el chocolate lila.", "El chocolate verde es más dulce que el chocolate amarillo.", "El chocolate azul es menos dulce que el chocolate lila y más que el chocolate rojo."],
+  "pregunta": "¿Qué chocolate es más dulce?",
+  "objeto": "chocolate",
+  "respuesta": ["verde", "amarillo", "lila", "azul", "rojo"]
+  },
+  {
+  "pistas": ["El edificio azul es menos alto que el edificio verde y más que el edificio naranja.", "El edificio naranja es más alto que el edificio blanco.", "El edificio rojo es menos alto que el edificio blanco."],
+  "objeto": "edificio",
+  "pregunta": "¿Qué edificio es más alto?",
+  "respuesta": ["verde", "azul", "naranja", "blanco", "rojo"]
+  },
+  {
+  "pistas": ["La faja azul es menos cómoda que la faja amarilla.", "La faja naranja es más cómoda que la faja verde y menos que la faja rosa.", "La faja amarilla es menos cómoda que la faja verde."],
+  "objeto": "faja",
+  "pregunta": "¿Qué faja es menos cómoda?",
+  "respuesta": ["azul", "amarilla", "verde", "naranja", "rosa"]
+  },
+  {
+  "pistas": ["Camilo es mayor que Martha y menor que Julia.", "Rosario es menor que Pedro.", "Julia es menor que Rosario."],
+  "objeto": "",
+  "pregunta": "¿Qué personaje es mayor?",
+  "respuesta": ["Pedro", "Rosario", "Julia", "Camilo", "Martha"]
+  },
+  {
+  "pistas": ["José es mayor que Ricardo y menor que Belén.", "Javier es mayor que Inés y menor que Ricardo."],
+  "objeto": "",
+  "pregunta": "¿Qué personaje es menor?",
+  "respuesta": ["Inés", "Javier", "Ricardo", "José", "Belén"]
+  },
+  {
+  "pistas": ["El libro verde cuesta más que el libro azul.", "El libro blanco cuesta menos que el libro azul.", "El libro amarillo cuesta más que el libro rosa y menos que el libro blanco."],
+  "objeto": "libro",
+  "pregunta": "¿Qué libro cuesta menos dinero?",
+  "respuesta": ["rosa", "amarillo", "blanco", "azul", "verde"]
+  },
+  {
+  "pistas": ["El pantalón amarillo es más cómodo que el pantalón azul y menos que el pantalón gris.", "El pantalón verde es más cómodo que el pantalón rosa.", "El pantalón azul es más cómodo que el pantalón verde."],
+  "objeto": "pantalon",
+  "pregunta": "¿Qué pantalón es menos cómodo?",
+  "respuesta": ["rosa", "verde", "azul", "amarillo", "gris"]
+  }
 ]

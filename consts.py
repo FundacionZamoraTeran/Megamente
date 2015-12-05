@@ -56,3 +56,5 @@ COLORS = {
     'grey': (130, 130, 130),
     'yellow': (252, 185, 24),
 }
+
+FONT_PATH = 'assets/fonts/PatuaOne-Regular.ttf'

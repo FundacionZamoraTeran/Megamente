@@ -1,5 +1,6 @@
 import json
 from random import shuffle
+from consts import get_sprite_path
 
 #utils funtions
 def load_json(file_name):
@@ -48,7 +49,23 @@ class MultipleChoiceQuizBase(object):
         self.used_questions.append(question)
         return question
 
+    def get_question_objects(self, question):
+        '''returns randomized objects filepaths'''
+        objs = question.get('respuesta')
+        final_objects = []
+        for obj in objs:
+            if question.get('objeto'):
+                file_name = '%s-%s.png' % (question['objeto'].lower(), obj.lower())
+            else:
+                file_name = '%s.png' % obj.lower()
+
+            file_name = get_sprite_path('deduccion', file_name)
+            final_objects.append(file_name)
+        shuffle(final_objects)
+        return final_objects
+
+
 class MegamenteData(MultipleChoiceQuizBase):
 
     def __init__(self, dont_load=False):
-        super(SabioData, self).__init__('megamente.json', dont_load)
+        super(MegamenteData, self).__init__('megamente.json', dont_load)
