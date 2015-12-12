@@ -11,6 +11,7 @@ _logger = logging.getLogger('genio-activity')
 
 class ImageSprite(pygame.sprite.Sprite):
     '''Class to create a background image'''
+    filled = False
 
     def __init__(self, image_file, location=(0, 0), name=None, scale=None):
         '''
