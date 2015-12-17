@@ -44,11 +44,13 @@
   {
   "pistas": ["El automóvil rosa es más rápido que el automóvil naranja.", "El automóvil azul es más rápido que el automóvil rosa.", "El automóvil amarillo es más rápido que el automóvil blanco y menos que el automóvil naranja."],
   "pregunta": "¿Qué automóvil es más rápido?",
+  "objeto": "carro",
   "respuesta": ["azul", "rosa", "naranja", "amarillo", "blanco"]
   },
   {
   "pistas": ["El zapato verde es menos cómodo que el zapato gris.", "El zapato azul es más cómodo que el zapato naranja y menos que el zapato amarillo.", "El zapato gris es menos cómodo que el zapato naranja."],
   "pregunta": "¿Qué zapato es más cómodo?",
+  "objeto": "zapato",
   "respuesta": ["amarillo", "azul", "naranja", "gris", "verde"]
   },
   {
@@ -59,32 +61,35 @@
   {
   "pistas": ["El globo rosa vuela menos que el globo blanco y más que el globo amarillo.", "El globo rojo vuela menos que el globo amarillo y más que el globo azul."],
   "pregunta": "¿Qué globo vuela menos?",
+  "objeto": "globo",
   "respuesta": ["azul", "rojo", "amarillo", "rosa", "blanco"]
   },
   {
   "pistas": ["La silla azul es más cómoda que la silla gris y menos que la silla rosa.", "La silla verde es menos cómoda que la silla gris y más que la silla amarilla."],
   "pregunta": "¿Qué silla es más cómoda?",
+  "objeto": "silla", 
   "respuesta": ["rosa", "azul", "gris", "verde", "amarilla"]
   },
   {
   "pistas": ["El calcetín gris es menos cómodo que el calcetín azul.", "El calcetín azul es menos cómodo que el calcetín rosa.", "El calcetín amarillo es menos cómodo que el calcetín verde y más que el calcetín rosa."],
   "pregunta": "¿Qué calcetín es más cómodo?",
+  "objeto": "calcetin",
   "respuesta": ["verde", "amarillo", "rosa", "azul", "gris"]
   },
   {
   "pistas": ["La cereza es más jugosa que el mango.", "El mango es más jugoso que el coco.", "La papaya es más jugosa que la cereza y menos que el melón."],
   "pregunta": "¿Qué fruta es más jugosa?",
-  "respuesta": ["coco", "mango", "cereza", "papaya", "melón"]
+  "respuesta": ["coco", "mango", "cereza", "papaya", "melon"]
   },
   {
   "pistas": ["Frannia es mayor que Anielka y menor que Juan.", "Luz es menor que Marieth.", "Marieth es menor que Anielka."],
-  "objeto": "nino",
+  "objeto": "",
   "pregunta": "¿Qué personaje es mayor?",
   "respuesta": ["Juan", "Frannia", "Anielka", "Marieth", "Luz"]
   },
   {
   "pistas": ["Félix es menor que Reyna y mayor que Gabriel.", "Antonio es mayor que Alisson y menor que Gabriel."],
-  "objeto": "nino",
+  "objeto": "",
   "pregunta": "¿Qué personaje es mayor?",
   "respuesta": ["Reyna", "Felix", "Gabriel", "Antonio", "Alisson"]
   },
