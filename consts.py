@@ -10,6 +10,10 @@ DEDUCCION_ASSETS = {
     'vertical_panel': get_sprite_path('deduccion', 'vertical-panel.png'),
 }
 
+INTRO_ASSETS = {
+    'background': get_sprite_path('inicio', 'background.png'),
+}
+
 #messages
 WIN_MESSAGE = "Felicidades, pasas al siguiente nivel!"
 GAME_OVER_MESSAGE = 'Vuelve a Intentarlo'
@@ -55,6 +59,7 @@ COLORS = {
     'black': (0, 0, 0),
     'grey': (130, 130, 130),
     'yellow': (252, 185, 24),
+    'brown': (154, 133, 122),
 }
 
 FONT_PATH = 'assets/fonts/PatuaOne-Regular.ttf'

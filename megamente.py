@@ -33,9 +33,9 @@ class DeduccionScreen(utils.ScreenBaseClass):
         pos = self.translate_percent(30, 30)
         surface = self.show_text_rect(message,
                                       self.text_font, self.MESSAGE_SIZE,
-                                      pos, consts.COLORS['grey'], consts.COLORS['white'],
+                                      pos, consts.COLORS['black'], consts.COLORS['white'],
                                       justification=1, alpha=191,
-                                      parent_background=consts.COLORS['yellow'],
+                                      parent_background=consts.COLORS['brown'],
                                       parent_alpha=191)
         pygame.display.update()
         pygame.time.wait(1000)
@@ -94,7 +94,7 @@ class DeduccionScreen(utils.ScreenBaseClass):
         question = '\n'.join(self.current_question['pistas'])
         question = '%s\n%s' %  (question, self.current_question['pregunta'])
         self.show_text_rect(question, self.text_font, self.QUESTION_SIZE,
-                            location, consts.COLORS['black'], 0, alpha=255)
+                            location, consts.COLORS['white'], 0, alpha=255)
 
     def next_question(self):
         #limpiando
@@ -119,6 +119,7 @@ class DeduccionScreen(utils.ScreenBaseClass):
                 name = name.split('-')[1]
             #TODO: quitar esto cuando tenga todos los recursos
             if not os.path.exists(obj):
+                print 'objeto no existe ',  obj
                 obj = 'assets/img/deduccion/notfound.png'
 
             obj_sprite = utils.ImageSprite(obj,
@@ -145,13 +146,16 @@ class DeduccionScreen(utils.ScreenBaseClass):
 
     def detect_game_state(self):
         answers = self.current_question.get('respuesta')
+        print self.drop_areas
+        print [a.name for a in self.drop_areas]
         if len(self.drop_objects) == 0:
             #ver si gana..
             #comprobar el orden de las preguntas
             for i, area in enumerate(self.drop_areas):
                 #scar el sprite que esta encima del area
                 sprite = pygame.sprite.spritecollide(area, self.used_objects, False)[0]
-                if sprite.name == answers[i]:
+                print sprite.name, '*********', answers[int(area.name)].lower(), '****', area.name
+                if sprite.name == answers[int(area.name)].lower():
                     continue
                 else:
                     return LOSS
@@ -236,6 +240,33 @@ class DeduccionScreen(utils.ScreenBaseClass):
                 else:
                     continue
 
+class IntroScreen(utils.ScreenBaseClass):
+
+    def __init__(self, screen):
+        self.screen = screen
+        self.background_src =  consts.INTRO_ASSETS.get('background')
+
+    def run(self):
+        self.set_background()
+        pygame.display.update()
+
+        while True:
+            while Gtk.events_pending():
+                Gtk.main_iteration()
+
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    try:
+                        pygame.quit()
+                        sys.exit()
+                        return
+                    except Exception, e:
+                        return
+
+                elif event.type == pygame.MOUSEBUTTONUP:
+                    DeduccionScreen(self.screen).run()
+
 
 class MainClass(utils.BaseHelperClass):
     '''Main Class that starts the game'''
@@ -253,7 +284,7 @@ class MainClass(utils.BaseHelperClass):
 
     def run(self):
         '''Runs the main game'''
-        start = DeduccionScreen(self.screen)
+        start = IntroScreen(self.screen)
         start.run()
 
     def main(self):

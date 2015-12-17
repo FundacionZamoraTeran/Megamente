@@ -24,10 +24,10 @@
   "respuesta": ["verde", "rosa", "naranja", "amarilla", "gris"]
   },
   {
-  "pistas": ["La piña es menos jugosa que la guayaba y más que la ciruela.", "La uva es más jugosa que la guayaba y menos que la pitaya."],
+  "pistas": ["La piña es menos jugosa que la guayaba y más que la ciruela.", "La uva es más jugosa que la guayaba y menos que la pitahaya."],
   "objeto": "",
   "pregunta": "¿Qué fruta es menos jugosa?",
-  "respuesta": ["ciruela", "piña", "guayaba", "uva", "pitaya"]
+  "respuesta": ["ciruela", "piña", "guayaba", "uva", "pitahaya"]
   },
   {
   "pistas": ["La bebida verde es menos dulce que la bebida lila y más que la bebida roja.", "La bebida amarilla es menos dulce que la bebida azul.", "La bebida roja es más dulce que la bebida azul."],
