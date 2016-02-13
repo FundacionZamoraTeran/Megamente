@@ -10,6 +10,7 @@ from engine import MegamenteData
 WIN = 1
 LOSS = 2
 INCOMPLETE = 3
+RETRY = 4
 
 WIN_MESSAGE = "GANASTE"
 LOSS_MESSAGE = "PERDISTE"
@@ -19,13 +20,19 @@ class DeduccionScreen(utils.ScreenBaseClass):
     MESSAGE_SIZE = (400, 200)
     current_question = None
     active_sprite = None
+    MAX_RETRIES = 2
+    retries = 0
 
     def __init__(self, screen):
         self.screen = screen
         self.background_src =  consts.DEDUCCION_ASSETS.get('background')
         self.drop_areas = pygame.sprite.Group()
+        #objetos sin usar
         self.drop_objects = pygame.sprite.Group()
+        #objetos usados
         self.used_objects = pygame.sprite.Group()
+        #objetos correctos
+        self.correct_objects = pygame.sprite.Group()
         self.text_font = pygame.font.Font(consts.FONT_PATH, 20)
         self.text_font_title = pygame.font.Font(consts.FONT_PATH, 30)
         self.data = MegamenteData()
@@ -103,11 +110,40 @@ class DeduccionScreen(utils.ScreenBaseClass):
                             question_loc, consts.COLORS['white'], None,
                             justification=1, alpha=255)
 
+    def retry_question(self):
+        self.active_sprite = None
+
+        #moviendo objetos a posicion inicial
+        for sprite in self.used_objects:
+            sprite.move(self.screen, self.background, sprite.initial_pos)
+
+        self.drop_objects = self.used_objects.copy()
+
+        self.used_objects.clear(self.screen, self.background)
+        self.used_objects.empty()
+
+        #vaciando areas donde el sprite se movio
+        for area in self.drop_areas:
+            try:
+                pygame.sprite.spritecollide(area, self.correct_objects, False)[0]
+                area.filled = True
+            except IndexError:
+                area.filled = False
+
+
+        self.draw_objects()
+
+        pygame.display.update()
+        self.detect_click()
+
+
     def next_question(self):
         #limpiando
         self.active_sprite = None
         self.used_objects.clear(self.screen, self.background)
         self.used_objects.empty()
+        self.correct_objects.clear(self.screen, self.background)
+        self.correct_objects.empty()
 
         for s in self.drop_areas:
             s.filled = False
@@ -148,25 +184,42 @@ class DeduccionScreen(utils.ScreenBaseClass):
 
         else:
             self.drop_objects.draw(self.screen)
-
         self.used_objects.draw(self.screen)
+        self.correct_objects.draw(self.screen)
 
     def detect_game_state(self):
         answers = self.current_question.get('respuesta')
-        print self.drop_areas
-        print [a.name for a in self.drop_areas]
+        result = WIN
         if len(self.drop_objects) == 0:
             #ver si gana..
             #comprobar el orden de las preguntas
             for i, area in enumerate(self.drop_areas):
                 #scar el sprite que esta encima del area
-                sprite = pygame.sprite.spritecollide(area, self.used_objects, False)[0]
+                try:
+                    sprite = pygame.sprite.spritecollide(area, self.used_objects, False)[0]
+                except IndexError:
+                    sprite = pygame.sprite.spritecollide(area, self.correct_objects, False)[0]
+
                 print sprite.name, '*********', answers[int(area.name)].lower(), '****', area.name
                 if sprite.name == answers[int(area.name)].lower():
-                    continue
+                    sprite.remove(self.used_objects)
+                    self.correct_objects.add(sprite)
+                    print 'correctos ', self.correct_objects
+                    print 'usados incorrectos ', self.used_objects
                 else:
-                    return LOSS
-            return WIN
+                    result = LOSS
+
+            #esto es para que que la ganada se de fuera del for y poder calcular que objetos estan bien para
+            #repintarlos en el retry
+            if result == LOSS:
+                if self.retries < self.MAX_RETRIES:
+                    self.retries += 1
+                    result = RETRY
+                else:
+                    self.retries = 0
+                    #limpiamos los objetos del retry
+
+            return result
         else:
             return INCOMPLETE
 
@@ -200,7 +253,6 @@ class DeduccionScreen(utils.ScreenBaseClass):
                             box = touched_boxes[0]
 
                             if box.filled:
-                                self.screen.blit(self.background, self.active_sprite.rect, self.active_sprite.rect)
                                 self.active_sprite.move(self.screen, self.background, self.active_sprite.initial_pos)
                                 self.draw_objects()
                                 pygame.display.update()
@@ -226,6 +278,9 @@ class DeduccionScreen(utils.ScreenBaseClass):
                                 self.active_sprite = False
                                 box.filled = False
                                 self.next_question()
+                            elif game_state == RETRY:
+                                self.retry_question()
+
 
                             pygame.display.update()
                         else:

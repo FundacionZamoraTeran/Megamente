@@ -31,7 +31,7 @@ class ImageSprite(pygame.sprite.Sprite):
         self.initial_pos = location
 
     def move(self, display, background, position):
-        #TODO: clean dirty rects
+        display.blit(background, self.rect, self.rect)
         self.rect.left, self.rect.top = position
         self.paint(display)
 
