@@ -27,6 +27,7 @@ class DeduccionScreen(utils.ScreenBaseClass):
         self.drop_objects = pygame.sprite.Group()
         self.used_objects = pygame.sprite.Group()
         self.text_font = pygame.font.Font(consts.FONT_PATH, 20)
+        self.text_font_title = pygame.font.Font(consts.FONT_PATH, 30)
         self.data = MegamenteData()
 
     def show_message(self, message):
@@ -91,10 +92,16 @@ class DeduccionScreen(utils.ScreenBaseClass):
 
     def draw_question(self, question):
         location = self.translate_percent(4.5, 33)
-        question = '\n'.join(self.current_question['pistas'])
-        question = '%s\n%s' %  (question, self.current_question['pregunta'])
-        self.show_text_rect(question, self.text_font, self.QUESTION_SIZE,
-                            location, consts.COLORS['white'], 0, alpha=255)
+        options = '\n'.join(self.current_question['pistas'])
+        question = self.current_question['pregunta']
+        self.show_text_rect(options, self.text_font, self.QUESTION_SIZE,
+                            location, consts.COLORS['white'], None,
+                            justification=0, alpha=255)
+
+        question_loc = self.translate_percent(4.5, 5)
+        self.show_text_rect(question, self.text_font_title, self.QUESTION_SIZE,
+                            question_loc, consts.COLORS['white'], None,
+                            justification=1, alpha=255)
 
     def next_question(self):
         #limpiando
